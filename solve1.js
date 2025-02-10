@@ -1,12 +1,18 @@
-// Print numbers from 1 to 100 and sum it.
+// Find the sum of an array.
 
 const prompt = require('prompt-sync')();
 
-const input = Number(prompt("Enter the last position : "));
+const size = Number(prompt("Enter the total element number :"));
 
-let sum = 0;
-for(let i=1;i<=input;i++){
-    process.stdout.write(i + " ");
-    sum = sum + i;
+const array = prompt("Enter the element of array : ").split(" ").map(Number);
+
+if(array.length === size){
+    let sum = 0;
+    for(let i=0;i<array.length;i++){
+        process.stdout.write(array[i] + " ");
+        sum = sum + array[i];
+    }
+    process.stdout.write("\nSum :" + sum);
+} else {
+    process.stdout.write("Invalid array size");
 }
-process.stdout.write("\nSum : "+ sum);
